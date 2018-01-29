@@ -1,0 +1,20 @@
+b=np.ones(6)
+a=[1]
+c=np.arange(-2*np.pi, 2*np.pi, 4*np.pi/4096)
+w1,h1=sig.freqz(b,a,c)
+h1db=20*np.log10(abs(h1))
+plt.plot(w1,h1db)
+plt.show()
+angles = np.angle(h1)
+plt.plot(w1/(2*np.pi), angles, 'r')
+plt.show()
+
+#2
+b1=np.array([1,0,1,0,1,0,1,0,1,0,1])
+w2,h2=sig.freqz(b1,a,c)
+h2db=20*np.log10(abs(h2))
+plt.plot(w2,h2db)
+plt.show()
+angles1 = np.angle(h2)
+plt.plot(w2/(2*np.pi), angles1, 'r')
+plt.show()
